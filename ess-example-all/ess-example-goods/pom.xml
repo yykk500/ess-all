@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>com.ess</groupId>
+		<artifactId>ess-example-all</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<!-- <relativePath/> -->
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ess.example</groupId>
+	<artifactId>ess-example-goods</artifactId>
+	<name>ess-example-goods</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+		<spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ess</groupId>
+			<artifactId>ess-framework-cloud</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>io.zipkin.reporter2</groupId>
+					<artifactId>
+						zipkin-sender-activemq-client
+					</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>io.zipkin.reporter2</groupId>
+					<artifactId>zipkin-sender-kafka</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ess</groupId>
+			<artifactId>ess-example-api</artifactId>
+		</dependency>
+		
+			<dependency>
+			<groupId>com.ess</groupId>
+			<artifactId>ess-example-service</artifactId>
+		</dependency>
+
+		<!-- <dependency> <groupId>com.alibaba.csp</groupId> <artifactId>sentinel-datasource-nacos</artifactId> 
+			</dependency> -->
+
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ess</groupId>
+			<artifactId>ess-example-service</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>ess-example-goods</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+					<mainClass>com.ess.example.goods.GoodsApplication</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

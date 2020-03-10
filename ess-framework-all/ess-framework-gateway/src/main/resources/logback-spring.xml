@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+	<!-- <property file="${catalina.home}/conf/platform/deployment.properties" 
+		/> -->
+	<springProperty scope="context" name="APP_NAME"
+		source="spring.application.name" />
+	<springProperty scope="context" name="LOG_PATH"
+		source="logging.path" />
+	<springProperty scope="context" name="APP_PORT"
+		source="server.port" />
+
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${APP_NAME} %d{yyyy/MM/dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{50} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH}/logs/${APP_NAME}/${APP_PORT}/${APP_NAME}.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${APP_NAME}.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>30MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${APP_NAME} %d{yyyy/MM/dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{50} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<appender name="ERR-FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH}/logs/${APP_NAME}/${APP_PORT}/${APP_NAME}.err</file>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>WARN</level><!-- WARN以下的拒绝,等于或以上的中立 -->
+		</filter>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${APP_NAME}.%d{yyyy-MM-dd}.%i.err</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>30MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${APP_NAME} %d{yyyy/MM/dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{50} - %msg%n</pattern>
+		</encoder>
+	</appender>
+<!-- 
+	<appender name="LOG-STASH"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH}/logs/${APP_NAME}/${APP_PORT}/${APP_NAME}.json</file>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>WARN</level>WARN以下的拒绝,等于或以上的中立
+		</filter>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${APP_NAME}.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>30MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${APP_NAME} %d{yyyy/MM/dd HH:mm:ss.SSS} [%thread] %-5level
+				%logger{50} - %msg%n</pattern>
+		</encoder>
+	</appender> -->
+
+
+	<logger name="org.springframework" level="ERROR" />
+	<logger name="org.apache.curator" level="ERROR" />
+	<logger name="tk.mybatis.pagehelper.mapper" level="ERROR" />
+	<logger name="java.sql.Connection" level="INFO" />
+	<logger name="java.sql.Statement" level="INFO" />
+	<logger name="java.sql.PreparedStatement" level="INFO" />
+	<logger name="com.ibatis" level="INFO" />
+	<logger name="com.netflix" level="INFO" />
+	<logger name="com.mysql" level="ERROR" />
+	<logger name="com.ess" level="INFO" />
+
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="ERR-FILE" />
+	</root>
+
+
+</configuration>  

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ess.example.mapper.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.ess.example.entity.Order">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="order_no" jdbcType="VARCHAR" property="orderNo" />
+    <result column="goods_id" jdbcType="BIGINT" property="goodsId" />
+    <result column="buy_qty" jdbcType="INTEGER" property="buyQty" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="total_amout" jdbcType="DECIMAL" property="totalAmout" />
+    <result column="version" jdbcType="BIGINT" property="version" />
+  </resultMap>
+</mapper>

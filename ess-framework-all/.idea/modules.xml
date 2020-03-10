@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ess-example-all/ess-example-all.iml" filepath="$PROJECT_DIR$/../ess-example-all/ess-example-all.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ess-example-all/ess-example-api/ess-example-api.iml" filepath="$PROJECT_DIR$/../ess-example-all/ess-example-api/ess-example-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ess-example-all/ess-example-goods/ess-example-goods.iml" filepath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/ess-example-goods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ess-example-all/ess-example-mapper/ess-example-mapper.iml" filepath="$PROJECT_DIR$/../ess-example-all/ess-example-mapper/ess-example-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ess-example-all/ess-example-order/ess-example-order.iml" filepath="$PROJECT_DIR$/../ess-example-all/ess-example-order/ess-example-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ess-example-all/ess-example-service/ess-example-service.iml" filepath="$PROJECT_DIR$/../ess-example-all/ess-example-service/ess-example-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ess-framework-all.iml" filepath="$PROJECT_DIR$/.idea/ess-framework-all.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ess-framework-api/ess-framework-api.iml" filepath="$PROJECT_DIR$/ess-framework-api/ess-framework-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ess-framework-boot/ess-framework-boot.iml" filepath="$PROJECT_DIR$/ess-framework-boot/ess-framework-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ess-framework-cloud/ess-framework-cloud.iml" filepath="$PROJECT_DIR$/ess-framework-cloud/ess-framework-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ess-framework-commons/ess-framework-commons.iml" filepath="$PROJECT_DIR$/ess-framework-commons/ess-framework-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ess-framework-gateway/ess-framework-gateway.iml" filepath="$PROJECT_DIR$/ess-framework-gateway/ess-framework-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ess-framework-mapper/ess-framework-mapper.iml" filepath="$PROJECT_DIR$/ess-framework-mapper/ess-framework-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ess-framework-service/ess-framework-service.iml" filepath="$PROJECT_DIR$/ess-framework-service/ess-framework-service.iml" />
+    </modules>
+  </component>
+</project>

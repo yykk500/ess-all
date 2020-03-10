@@ -1,0 +1,189 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ess</groupId>
+	<artifactId>ess-framework-all</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ess-framework-all</name>
+	<description>二三三基础框架服务项目</description>
+	<packaging>pom</packaging>
+	<modules>
+		<module>ess-framework-commons</module>
+		<module>ess-framework-api</module>
+		<module>ess-framework-mapper</module>
+		<module>ess-framework-service</module>
+		<module>ess-framework-boot</module>
+		<module>ess-framework-cloud</module>
+		<module>ess-framework-gateway</module>
+	</modules>
+	<!-- 配置文件 -->
+	<properties>
+		<java.version>1.8</java.version>
+		<spring-boot.version>2.2.4.RELEASE</spring-boot.version>
+		<spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+		<project.version>0.0.1-SNAPSHOT</project.version>
+		<fastjson.version>1.2.62</fastjson.version>
+		<spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+	</properties>
+
+	<!-- 管理依赖版本号,子项目不会默认依赖 -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- 导入Spring-boot 项目的依赖 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>2.2.4.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- 导入Spring-Cloud 项目的依赖 -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- 导入Alibaba Spring-Cloud 项目的依赖 -->
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${spring-cloud-alibaba.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.ess</groupId>
+				<artifactId>ess-framework-commons</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.ess</groupId>
+				<artifactId>ess-framework-mapper</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.ess</groupId>
+				<artifactId>ess-framework-service</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.ess</groupId>
+				<artifactId>ess-framework-boot</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.ess</groupId>
+				<artifactId>ess-framework-cloud</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.ess</groupId>
+				<artifactId>ess-framework-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.ess</groupId>
+				<artifactId>ess-example-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- FastJson -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba.csp</groupId>
+				<artifactId>sentinel-datasource-nacos</artifactId>
+				<version>1.7.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba.nacos</groupId>
+				<artifactId>nacos-spring-context</artifactId>
+				<version>0.3.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>net.logstash.logback</groupId>
+				<artifactId>logstash-logback-encoder</artifactId>
+				<version>6.3</version>
+			</dependency>
+
+
+			<!-- Mysql 连接jar -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>8.0.9-rc</version>
+			</dependency>
+
+			<!--mybatis -->
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>2.1.1</version>
+			</dependency>
+
+			<!--mapper -->
+			<dependency>
+				<groupId>tk.mybatis</groupId>
+				<artifactId>mapper-spring-boot-starter</artifactId>
+				<version>2.1.5</version>
+			</dependency>
+
+			<!--pagehelper -->
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper-spring-boot-starter</artifactId>
+				<version>1.2.13</version>
+			</dependency>
+
+			<!-- lombok -->
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.18.8</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+	<!-- 所有项目都需要引入的jar -->
+	<dependencies>
+	</dependencies>
+
+	<!-- 发布到Nexut仓库 -->
+	<!-- <distributionManagement> <snapshotRepository> 这里的ID一定要在maven setting文件中存在于server下的ID 
+		<id>sona</id> <url>https://oss.sonatype.org/content/repositories/snapshots/</url> 
+		</snapshotRepository> <repository> <id>sona</id> <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url> 
+		</repository> </distributionManagement> -->
+
+	<profiles>
+		<profile>
+			<id>jdk-1.8</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<jdk>1.8</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.source>1.8</maven.compiler.source>
+				<maven.compiler.target>1.8</maven.compiler.target>
+				<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+			</properties>
+		</profile>
+	</profiles>
+</project>

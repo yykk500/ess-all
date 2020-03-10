@@ -1,0 +1,108 @@
+目标package: 
+
+当前时间：
+2020-3-8
+22:37:55
+2020-03-08 22:37:55
+
+所有配置的属性信息:
+targetPackage - 
+templatePath - generator/test-one.ftl
+targetProject - src/test/resources
+fileName - ${tableClass.shortClassName}Test.txt
+
+实体和表的信息：
+表名：stock
+变量名：stock
+小写名：stock
+类名：Stock
+全名：com.ess.example.entity.Stock
+包名：com.ess.example.entity
+
+列的信息：
+=====================================
+主键：
+    -------------------------------------
+    列名：stock_id
+    列类型：BIGINT
+    字段名：stockId
+    注释：库存ID
+    类型包名：java.lang
+    类型短名：Long
+    类型全名：java.lang.Long
+    是否主键：true
+    是否可空：false
+    是否为BLOB列：false
+    是否为String列：false
+    是否为字符串列：false
+    是否为日期列：false
+    是否为时间列：false
+    是否为序列列：false
+    列长度：19
+    列精度：0
+
+基础列：
+    -------------------------------------
+    列名：goods_id
+    列类型：BIGINT
+    字段名：goodsId
+    注释：商品id
+    类型包名：java.lang
+    类型短名：Long
+    类型全名：java.lang.Long
+    是否主键：false
+    是否可空：false
+    是否为BLOB列：false
+    是否为String列：false
+    是否为字符串列：false
+    是否为日期列：false
+    是否为时间列：false
+    是否为序列列：false
+    列长度：19
+    列精度：0
+    -------------------------------------
+    列名：stock_qty
+    列类型：INTEGER
+    字段名：stockQty
+    注释：库存数量
+    类型包名：java.lang
+    类型短名：Integer
+    类型全名：java.lang.Integer
+    是否主键：false
+    是否可空：false
+    是否为BLOB列：false
+    是否为String列：false
+    是否为字符串列：false
+    是否为日期列：false
+    是否为时间列：false
+    是否为序列列：false
+    列长度：10
+    列精度：0
+    -------------------------------------
+    列名：version
+    列类型：BIGINT
+    字段名：version
+    注释：版本
+    类型包名：java.lang
+    类型短名：Long
+    类型全名：java.lang.Long
+    是否主键：false
+    是否可空：true
+    是否为BLOB列：false
+    是否为String列：false
+    是否为字符串列：false
+    是否为日期列：false
+    是否为时间列：false
+    是否为序列列：false
+    列长度：19
+    列精度：0
+
+Blob列：
+
+=====================================
+全部列：
+列名 - 字段名
+    stock_id - stockId
+    goods_id - goodsId
+    stock_qty - stockQty
+    version - version
