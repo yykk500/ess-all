@@ -1,10 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ess</groupId>
 	<artifactId>ess-framework-all</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<!--
+    <version>0.0.1.RELEASE</version>
+    -->
 	<name>ess-framework-all</name>
 	<description>二三三基础框架服务项目</description>
 	<packaging>pom</packaging>
@@ -164,13 +167,22 @@
 
 	<!-- 所有项目都需要引入的jar -->
 	<dependencies>
+
 	</dependencies>
 
 	<!-- 发布到Nexut仓库 -->
-	<!-- <distributionManagement> <snapshotRepository> 这里的ID一定要在maven setting文件中存在于server下的ID 
-		<id>sona</id> <url>https://oss.sonatype.org/content/repositories/snapshots/</url> 
-		</snapshotRepository> <repository> <id>sona</id> <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url> 
-		</repository> </distributionManagement> -->
+	<distributionManagement>
+		<!-- 快照库 -->
+		<snapshotRepository>
+			<id>ess-snapshots</id>
+			<url>http://nexus.233.com:8081/repository/ess-snapshots/</url>
+		</snapshotRepository>
+		<!-- 正式版本 -->
+		<repository>
+			<id>ess-releases</id>
+			<url>http://nexus.233.com:8081/repository/ess-releases/</url>
+		</repository>
+	</distributionManagement>
 
 	<profiles>
 		<profile>
@@ -186,4 +198,19 @@
 			</properties>
 		</profile>
 	</profiles>
+
+	<build>
+		<plugins>
+			<!-- 统一修改子项目的版本号  -->
+			<!-- mvn -N versions:update-child-modules -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<generateBackupPoms>false</generateBackupPoms>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
