@@ -1,6 +1,7 @@
 package com.ess.example.goods;
 
 
+import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +18,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @SpringBootApplication
 @MapperScan(basePackages = "com.ess.example.mapper")
 @ComponentScan(basePackages = {"com.ess.example.goods.web","com.ess.**.service"})
+@EnableSwagger2Doc
 public class GoodsApplication extends BootWebConfigurer{
 
 	public static void main(String[] args) {

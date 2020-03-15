@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -23,13 +26,16 @@ import tk.mybatis.mapper.util.Sqls;
 
 @RestController
 @RefreshScope
+@Api(tags = "商品接口")
 public class GoodsController extends AbstractController implements GoodsFeignClient {
 
 	@Autowired
 	private GoodsService goodsService;
 
 	@Override
-	public ApiResponse<GoodsDto> getGoods(Long goodsId) {
+	@ApiOperation(value = "获取商品接口。")
+//	@io.swagger.annotations.ApiResponses("")
+	public ApiResponse<GoodsDto> getGoods(@ApiParam("商品id") Long goodsId) {
 		// 根据Id查询商品信息
 		Goods goods = goodsService.selectByPrimaryKey(goodsId);
 		// PO与Dto数据对象转换

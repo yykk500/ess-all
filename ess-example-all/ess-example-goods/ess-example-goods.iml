@@ -23,11 +23,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="ess-framework-cloud" />
-    <orderEntry type="module" module-name="ess-framework-boot" />
-    <orderEntry type="module" module-name="ess-framework-commons" />
+    <orderEntry type="library" name="Maven: com.ess:ess-framework-cloud:0.0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.ess:ess-framework-boot:0.0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.ess:ess-framework-commons:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:2.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-json:2.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.2" level="project" />
@@ -41,9 +41,7 @@
     <orderEntry type="library" name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.validator:hibernate-validator:6.0.18.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.4.1.Final" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml:classmate:1.5.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-devtools:2.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-actuator:2.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-actuator-autoconfigure:2.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-actuator:2.2.4.RELEASE" level="project" />
@@ -51,6 +49,22 @@
     <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.11" level="project" />
     <orderEntry type="library" name="Maven: org.latencyutils:LatencyUtils:2.0.3" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.62" level="project" />
+    <orderEntry type="library" name="Maven: com.spring4all:swagger-spring-boot-starter:1.9.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: io.springfox:springfox-swagger-ui:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: io.springfox:springfox-spring-web:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: io.springfox:springfox-swagger2:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: io.swagger:swagger-annotations:1.5.20" level="project" />
+    <orderEntry type="library" name="Maven: io.springfox:springfox-spi:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: io.springfox:springfox-core:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: io.springfox:springfox-schema:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: io.springfox:springfox-swagger-common:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:20.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml:classmate:1.5.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.mapstruct:mapstruct:1.2.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.swagger:swagger-models:1.5.24" level="project" />
+    <orderEntry type="library" name="Maven: io.springfox:springfox-bean-validators:2.9.2" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:2.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.cloud:spring-cloud-alibaba-nacos-config:2.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba.nacos:nacos-client:1.1.4" level="project" />
@@ -105,7 +119,6 @@
     <orderEntry type="library" name="Maven: com.netflix.hystrix:hystrix-core:1.5.18" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: io.reactivex:rxnetty:0.4.9" level="project" />
-    <orderEntry type="library" name="Maven: com.google.guava:guava:16.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.netflix.ribbon:ribbon-core:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
     <orderEntry type="library" name="Maven: com.netflix.ribbon:ribbon-httpclient:2.3.0" level="project" />
@@ -160,10 +173,10 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.10.2" level="project" />
     <orderEntry type="module" module-name="ess-example-api" />
-    <orderEntry type="module" module-name="ess-framework-api" />
+    <orderEntry type="library" name="Maven: com.ess:ess-framework-api:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="ess-example-service" />
-    <orderEntry type="module" module-name="ess-framework-service" />
-    <orderEntry type="module" module-name="ess-framework-mapper" />
+    <orderEntry type="library" name="Maven: com.ess:ess-framework-service:0.0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.ess:ess-framework-mapper:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.9-rc" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.2.4.RELEASE" level="project" />
@@ -221,7 +234,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.assertj:assertj-core:3.13.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest:2.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-core:3.1.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: net.bytebuddy:byte-buddy:1.10.6" level="project" />
+    <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.10.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: net.bytebuddy:byte-buddy-agent:1.10.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.objenesis:objenesis:2.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.skyscreamer:jsonassert:1.5.0" level="project" />

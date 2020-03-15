@@ -10,14 +10,12 @@
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="ess-framework-service" />
-    <orderEntry type="module" module-name="ess-framework-mapper" />
+    <orderEntry type="library" name="Maven: com.ess:ess-framework-service:0.0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.ess:ess-framework-mapper:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.9-rc" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.2.4.RELEASE" level="project" />

@@ -7,8 +7,16 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/ess-framework-api/pom.xml" />
+        <option value="$PROJECT_DIR$/ess-framework-boot/pom.xml" />
+        <option value="$PROJECT_DIR$/ess-framework-cloud/pom.xml" />
+        <option value="$PROJECT_DIR$/ess-framework-commons/pom.xml" />
+        <option value="$PROJECT_DIR$/ess-framework-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/ess-framework-gateway/pom.xml.bak" />
+        <option value="$PROJECT_DIR$/ess-framework-mapper/pom.xml" />
+        <option value="$PROJECT_DIR$/ess-framework-service/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

@@ -161,6 +161,13 @@
 				<artifactId>lombok</artifactId>
 				<version>1.18.8</version>
 			</dependency>
+
+			<!-- Swagger API文档-->
+			<dependency>
+				<groupId>com.spring4all</groupId>
+				<artifactId>swagger-spring-boot-starter</artifactId>
+				<version>1.9.1.RELEASE</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -210,6 +217,35 @@
 				<configuration>
 					<generateBackupPoms>false</generateBackupPoms>
 				</configuration>
+			</plugin>
+
+			<!-- Maven 编译插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!-- 要将源码放上去，需要加入这个插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<configuration>
+					<attach>true</attach>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

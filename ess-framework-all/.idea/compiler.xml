@@ -9,9 +9,10 @@
         <module name="ess-framework-boot" />
         <module name="ess-framework-mapper" />
         <module name="ess-framework-service" />
-        <module name="ess-framework-commons" />
-        <module name="ess-framework-api" />
         <module name="ess-framework-gateway" />
+        <module name="ess-framework-gateway (2)" />
+        <module name="ess-framework-api" />
+        <module name="ess-framework-commons" />
         <module name="ess-framework-cloud" />
       </profile>
     </annotationProcessing>
@@ -22,6 +23,8 @@
       <module name="ess-framework-cloud" target="1.8" />
       <module name="ess-framework-commons" target="1.8" />
       <module name="ess-framework-gateway" target="1.8" />
+      <module name="ess-framework-gateway (1)" target="1.8" />
+      <module name="ess-framework-gateway (2)" target="1.8" />
       <module name="ess-framework-mapper" target="1.8" />
       <module name="ess-framework-service" target="1.8" />
     </bytecodeTargetLevel>
