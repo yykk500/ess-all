@@ -1,5 +1,6 @@
 package com.ess.framework.boot.gloabl;
 
+import javax.security.auth.message.AuthException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -71,7 +72,7 @@ public class GloablExceptionHandler {
 	 * @return
 	 */
 //	@ResponseBody
-//	@ExceptionHandler(value=AuthException.class)
+//	@ExceptionHandler(value= AuthException.class)
 //	public ResponseData  busiexception(AuthException exception) {
 //		Map<String,Object> resultMap = ResultMapHelper.failMap(exception);
 //		resultMap.put("isLogin", false);

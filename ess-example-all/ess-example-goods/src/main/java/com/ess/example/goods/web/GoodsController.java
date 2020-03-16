@@ -3,13 +3,18 @@ package com.ess.example.goods.web;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ess.example.dto.goods.GetGoodsReq;
+import com.ess.example.dto.goods.GoodsListReq;
+import com.ess.framework.api.request.ApiPageRequest;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ess.example.api.GoodsFeignClient;
@@ -22,6 +27,7 @@ import com.ess.framework.boot.gloabl.AbstractController;
 import com.github.pagehelper.PageHelper;
 
 import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.entity.SqlsCriteria;
 import tk.mybatis.mapper.util.Sqls;
 
 @RestController
@@ -33,11 +39,10 @@ public class GoodsController extends AbstractController implements GoodsFeignCli
 	private GoodsService goodsService;
 
 	@Override
-	@ApiOperation(value = "获取商品接口。")
-//	@io.swagger.annotations.ApiResponses("")
-	public ApiResponse<GoodsDto> getGoods(@ApiParam("商品id") Long goodsId) {
+	@ApiOperation(value = "查询商品接口")
+	public ApiResponse<GoodsDto> getGoods(@ApiParam GetGoodsReq getGoodsReq) {
 		// 根据Id查询商品信息
-		Goods goods = goodsService.selectByPrimaryKey(goodsId);
+		Goods goods = goodsService.selectByPrimaryKey(getGoodsReq.getGoodsId());
 		// PO与Dto数据对象转换
 		GoodsDto goodsDto = new GoodsDto();
 		BeanUtils.copyProperties(goods, goodsDto);
@@ -45,13 +50,9 @@ public class GoodsController extends AbstractController implements GoodsFeignCli
 	}
 
 	@Override
-	public ApiResponse<String> existGoods(Long goodsId) {
-		return null;
-	}
-
-	@Override
-	public ApiResponse<GoodsDetailDto> getGoodsInfo(Long goodsId) {
-		Goods goods = goodsService.selectByPrimaryKey(goodsId);
+	@ApiOperation(value = "获取商品详细信息")
+	public ApiResponse<GoodsDetailDto> getGoodsInfo(@ApiParam GetGoodsReq getGoodsReq) {
+		Goods goods = goodsService.selectByPrimaryKey(getGoodsReq.getGoodsId());
 		GoodsDetailDto goodsDetailDto = new GoodsDetailDto();
 		BeanUtils.copyProperties(goods, goodsDetailDto);
 		goodsDetailDto.setStockQty(10);
@@ -59,15 +60,17 @@ public class GoodsController extends AbstractController implements GoodsFeignCli
 	}
 
 	@Override
-	public ApiResponse<List<GoodsDto>> goodsList() {
+	@ApiOperation(value = "分页查询商品列表")
+	public ApiResponse<List<GoodsDto>> goodsList(@ApiParam GoodsListReq goodsListReq) {
 		List<GoodsDto> goodsList = new ArrayList<>();
-		PageHelper.startPage(1, 2);
-		Example example = Example.builder(Goods.class)
-//				.setDistinct(true).select("goodsId", "goodsDesc")
-				.where(Sqls.custom().andEqualTo("goodsId", 1))
-				.orderByAsc("goodsId")
-				.orderByDesc("goodsName")
-				.build();
+		// 分页查询
+		PageHelper.startPage(goodsListReq.getPageNo(), goodsListReq.getPageSize());
+		// 构建查询条件
+		Example example = Example.builder(Goods.class).build();
+		Example.Criteria criteria = example.createCriteria();
+		if(StringUtils.isNotBlank(goodsListReq.getGoodsName())){
+			criteria.andLike("goodsName", "%"+goodsListReq.getGoodsName() + "%");
+		}
 		List<Goods> list = goodsService.selectByExample(example);
 		PageInfo pageInfo = new PageInfo(list);
 		for(Goods tempGoods : list){

@@ -2,6 +2,9 @@ package com.ess.example.api;
 
 import java.util.List;
 
+import com.ess.example.dto.goods.GetGoodsReq;
+import com.ess.example.dto.goods.GoodsListReq;
+import io.swagger.annotations.ApiParam;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,29 +23,19 @@ public interface GoodsFeignClient extends ApiFeignClient {
 	 * @return
 	 */
 	@GetMapping(value = "/getGoods",produces = APPLICATION_JSON )
-	public ApiResponse<GoodsDto> getGoods(@RequestParam("goodsId") Long goodsId);
-	
-	
-	
+	public ApiResponse<GoodsDto> getGoods(GetGoodsReq goodsReq);
+
 	/**
 	 * 查询商品信息
 	 * @return
 	 */
 	@GetMapping(value = "/getGoodsInfo",produces = APPLICATION_JSON )
-	public ApiResponse<GoodsDetailDto> getGoodsInfo(@RequestParam("goodsId") Long goodsId);
-	
-	/**
-	 *  Return
-	 * @return
-	 */
-	@GetMapping(value = "/existGoods",produces = APPLICATION_JSON)
-	public ApiResponse<String> existGoods(@RequestParam("goodsId") Long goodsId);
-	
-	
+	public ApiResponse<GoodsDetailDto> getGoodsInfo(GetGoodsReq goodsReq);
+
 	/**
 	 * 查询商品信息
 	 * @return
 	 */
 	@GetMapping(value = "/goodsList",produces = APPLICATION_JSON )
-	public ApiResponse<List<GoodsDto>> goodsList();
+	public ApiResponse<List<GoodsDto>> goodsList(GoodsListReq goodsListReq);
 }
