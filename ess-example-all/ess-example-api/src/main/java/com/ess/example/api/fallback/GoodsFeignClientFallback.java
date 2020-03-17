@@ -1,9 +1,8 @@
 package com.ess.example.api.fallback;
 
-import java.util.List;
-
 import com.ess.example.dto.goods.GetGoodsReq;
 import com.ess.example.dto.goods.GoodsListReq;
+import com.ess.framework.api.response.ApiPageResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -27,7 +26,7 @@ public class GoodsFeignClientFallback implements GoodsFeignClient {
 	}
 
 	@Override
-	public ApiResponse<List<GoodsDto>> goodsList(@RequestParam GoodsListReq goodsListReq) {
-		return  ApiResponse.failResp("远程服务异常...熔断错误...");
+	public ApiPageResponse<GoodsDto> goodsList(@RequestParam GoodsListReq goodsListReq) {
+		return  ApiPageResponse.failResp("远程服务异常...熔断错误...");
 	}
 }

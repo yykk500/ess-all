@@ -1,13 +1,10 @@
 package com.ess.example.api;
 
-import java.util.List;
-
 import com.ess.example.dto.goods.GetGoodsReq;
 import com.ess.example.dto.goods.GoodsListReq;
-import io.swagger.annotations.ApiParam;
+import com.ess.framework.api.response.ApiPageResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ess.example.api.fallback.GoodsFeignClientFallback;
 import com.ess.example.dto.goods.GoodsDetailDto;
@@ -37,5 +34,5 @@ public interface GoodsFeignClient extends ApiFeignClient {
 	 * @return
 	 */
 	@GetMapping(value = "/goodsList",produces = APPLICATION_JSON )
-	public ApiResponse<List<GoodsDto>> goodsList(GoodsListReq goodsListReq);
+	public ApiPageResponse<GoodsDto> goodsList(GoodsListReq goodsListReq);
 }

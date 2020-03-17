@@ -1,28 +1,19 @@
 package com.ess.framework.api.response;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * 返回消息的实体类
  * 
  * @author Luozelin
  *
  */
-public class ApiResponse<T> {
+@ApiModel("返回消息响应Model")
+public class ApiResponse<T> extends AbstractResponse {
 
-	private Boolean status; // 响应状态是否成功 code=时等于true，非200时等于false
-
-	private Integer code;// 响应码：200等于成功，其他等于失败。
-
-	private String message;// 响应消息
-
+	@ApiModelProperty(value = "响应data",notes ="响应data" )
 	private T data; // 响应data，都和对象都可以。
-	
-	private static final int CODE_SUCCESS = 200; // 响应状态是否成功 code=时等于true，非200时等于false
-
-	public static final int CODE_DEFALUT_FAIL = 500; // 默认错误编码500
-
-	public final static String MESSAGE_SUCCESS = "操作成功.";
-
-	public final static String MESSAGE_FAIL = "对不起，系统异常.请联系管理员.";
 
 	public ApiResponse() {
 	}
@@ -60,7 +51,7 @@ public class ApiResponse<T> {
 	 * 响应成功的Response，并设置data
 	 * @param <T>
 	 * @param data
-	 * @param message @return status=200,message=${message}
+	 * @return status=200,message=${message}
 	 * @return
 	 */
 	public static <T> ApiResponse<T> successResp(T data) {
@@ -107,34 +98,7 @@ public class ApiResponse<T> {
 		return new ApiResponse<T>(code, message);
 	}
 
-	public Boolean getStatus() {
-		return status;
-	}
 
-	public void setStatus(Boolean status) {
-		this.status = status;
-	}
-
-	public Integer getCode() {
-		return code;
-	}
-
-	public void setCode(Integer code) {
-		if(code == CODE_SUCCESS) {
-			this.setStatus(true);
-		}else {
-			this.setStatus(false);
-		}
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
 
 	public T getData() {
 		return data;

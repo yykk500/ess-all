@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.ess.example.dto.goods.GetGoodsReq;
 import com.ess.example.dto.goods.GoodsListReq;
-import com.ess.framework.api.request.ApiPageRequest;
+import com.ess.framework.api.response.ApiPageResponse;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -14,7 +14,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ess.example.api.GoodsFeignClient;
@@ -27,8 +26,6 @@ import com.ess.framework.boot.gloabl.AbstractController;
 import com.github.pagehelper.PageHelper;
 
 import tk.mybatis.mapper.entity.Example;
-import tk.mybatis.mapper.entity.SqlsCriteria;
-import tk.mybatis.mapper.util.Sqls;
 
 @RestController
 @RefreshScope
@@ -61,8 +58,7 @@ public class GoodsController extends AbstractController implements GoodsFeignCli
 
 	@Override
 	@ApiOperation(value = "分页查询商品列表")
-	public ApiResponse<List<GoodsDto>> goodsList(@ApiParam GoodsListReq goodsListReq) {
-		List<GoodsDto> goodsList = new ArrayList<>();
+	public ApiPageResponse<GoodsDto> goodsList(@ApiParam GoodsListReq goodsListReq) {
 		// 分页查询
 		PageHelper.startPage(goodsListReq.getPageNo(), goodsListReq.getPageSize());
 		// 构建查询条件
@@ -71,6 +67,7 @@ public class GoodsController extends AbstractController implements GoodsFeignCli
 		if(StringUtils.isNotBlank(goodsListReq.getGoodsName())){
 			criteria.andLike("goodsName", "%"+goodsListReq.getGoodsName() + "%");
 		}
+		List<GoodsDto> goodsList = new ArrayList<>();
 		List<Goods> list = goodsService.selectByExample(example);
 		PageInfo pageInfo = new PageInfo(list);
 		for(Goods tempGoods : list){
@@ -78,8 +75,10 @@ public class GoodsController extends AbstractController implements GoodsFeignCli
 			BeanUtils.copyProperties(tempGoods,goodsDto);
 			goodsList.add(goodsDto);
 		}
-		pageInfo.setList(goodsList);
-		return ApiResponse.successResp(goodsList);
+		ApiPageResponse<GoodsDto> response = ApiPageResponse.successResp(goodsList);
+		// 设置分页数据：总记录数和分页数量
+		response.setPageInfo(pageInfo.getTotal(),pageInfo.getPages());
+		return response;
 	}
 
 }

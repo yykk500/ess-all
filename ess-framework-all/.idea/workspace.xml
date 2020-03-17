@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f74f9d76-bcc0-459b-862e-06115d50442b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/response/ApiPageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/response/AbstractResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ess-example-all/ess-example-api/src/main/java/com/ess/example/api/GoodsFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-api/src/main/java/com/ess/example/api/GoodsFeignClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ess-example-all/ess-example-api/src/main/java/com/ess/example/api/fallback/GoodsFeignClientFallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-api/src/main/java/com/ess/example/api/fallback/GoodsFeignClientFallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ess-example-all/ess-example-api/src/main/java/com/ess/example/dto/goods/GoodsDetailDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-api/src/main/java/com/ess/example/dto/goods/GoodsDetailDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/web/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/web/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/request/ApiPageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/request/ApiPageRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/request/ApiRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/request/ApiRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/config/FrameworkBootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/config/FrameworkBootConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/BootWebConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/BootWebConfigurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/GloablExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/GloablExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/response/ApiPageResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/response/ApiPageResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/response/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/response/ApiResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +56,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="flattenModules" value="true" />
-    <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -159,7 +151,7 @@
       <workItem from="1583926759631" duration="463000" />
       <workItem from="1583927253986" duration="894000" />
       <workItem from="1584192358067" duration="2483000" />
-      <workItem from="1584275685795" duration="12328000" />
+      <workItem from="1584275685795" duration="18248000" />
     </task>
     <task id="LOCAL-00001" summary="更新POM文件">
       <created>1584192431705</created>
@@ -183,6 +175,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="663" y="183" key="#GoodsApplication/0.0.1920.1040@0.0.1920.1040" timestamp="1584283811974" />
+    <state x="765" y="212" key="#com.intellij.ide.util.MemberChooser" timestamp="1584449959736">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="212" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584449959736" />
     <state x="557" y="117" key="CommitChangelistDialog2" timestamp="1584192429325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -191,22 +187,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="212" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584360284639" />
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1584362139123">
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom" timestamp="1584450727100">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584362139123" />
-    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1584362139123">
+    <state width="1877" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584450727100" />
+    <state width="1877" height="274" key="GridCell.Tab.0.center" timestamp="1584450727099">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584362139123" />
-    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1584362139123">
+    <state width="1877" height="274" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584450727099" />
+    <state width="1877" height="274" key="GridCell.Tab.0.left" timestamp="1584450727099">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584362139123" />
-    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1584362139123">
+    <state width="1877" height="274" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584450727099" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right" timestamp="1584450727100">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584362139123" />
+    <state width="1877" height="274" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584450727100" />
     <state x="600" y="223" key="NewModule_or_Project.wizard" timestamp="1584194148921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
