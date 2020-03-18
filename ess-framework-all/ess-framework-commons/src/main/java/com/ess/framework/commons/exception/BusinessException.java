@@ -4,8 +4,6 @@
 
 package com.ess.framework.commons.exception;
 
-import com.ess.framework.commons.response.ResponseMap;
-
 /**
  * 业务异常类
  * 
@@ -18,7 +16,7 @@ public class BusinessException extends RuntimeException {
 	/**
 	 * 错误编码
 	 */
-	private int code = ResponseMap.CODE_DEFALUT_FAIL;
+	private int code = 500;
 	
 
 	public BusinessException(String message) {

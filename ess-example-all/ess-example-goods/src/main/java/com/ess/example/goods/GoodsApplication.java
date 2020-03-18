@@ -1,6 +1,7 @@
 package com.ess.example.goods;
 
 
+import com.ess.framework.boot.config.FrameworkBootConfig;
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -12,14 +13,16 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.ess.framework.boot.gloabl.BootWebConfigurer;
 
+import org.springframework.scheduling.annotation.EnableScheduling;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @EnableDiscoveryClient
 @SpringBootApplication
 @MapperScan(basePackages = "com.ess.example.mapper")
-@ComponentScan(basePackages = {"com.ess.example.goods.web","com.ess.**.service"})
+@ComponentScan(basePackages = {"com.ess.example.goods.web","com.ess.**.service","com.ess.example.goods.schedule","com.ess.example.goods.aop"})
 @EnableSwagger2Doc
-public class GoodsApplication extends BootWebConfigurer{
+@EnableScheduling
+public class GoodsApplication extends FrameworkBootConfig {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GoodsApplication.class, args);

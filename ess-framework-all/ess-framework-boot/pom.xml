@@ -17,6 +17,12 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>com.ess</groupId>
+			<artifactId>ess-framework-api</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>com.ess</groupId>
 			<artifactId>ess-framework-commons</artifactId>

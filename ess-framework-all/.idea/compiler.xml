@@ -6,17 +6,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ess-example-goods" />
         <module name="ess-framework-boot" />
-        <module name="ess-framework-mapper" />
-        <module name="ess-framework-service" />
-        <module name="ess-framework-gateway" />
-        <module name="ess-framework-gateway (2)" />
         <module name="ess-framework-api" />
-        <module name="ess-framework-commons" />
+        <module name="ess-example-api" />
+        <module name="ess-framework-mapper" />
+        <module name="ess-example-mapper" />
+        <module name="ess-example-service" />
+        <module name="ess-framework-service" />
+        <module name="ess-example-order" />
         <module name="ess-framework-cloud" />
+        <module name="ess-framework-gateway" />
+        <module name="ess-framework-commons" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ess-example-all" target="1.8" />
+      <module name="ess-example-api" target="1.8" />
+      <module name="ess-example-goods" target="1.8" />
+      <module name="ess-example-mapper" target="1.8" />
+      <module name="ess-example-order" target="1.8" />
+      <module name="ess-example-service" target="1.8" />
       <module name="ess-framework-all" target="1.8" />
       <module name="ess-framework-api" target="1.8" />
       <module name="ess-framework-boot" target="1.8" />

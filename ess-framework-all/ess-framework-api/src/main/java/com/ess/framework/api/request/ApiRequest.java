@@ -19,10 +19,4 @@ public abstract class ApiRequest {
 	 */
 	@ApiParam("sid请求唯一id")
 	private String sid;
-
-	/**
-	 * 请求token 用于接口鉴权验证
-	 */
-	@ApiParam("token鉴权")
-	private String token;
 }

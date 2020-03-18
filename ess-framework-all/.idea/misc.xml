@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/ess-framework-gateway/pom.xml.bak" />
         <option value="$PROJECT_DIR$/ess-framework-mapper/pom.xml" />
         <option value="$PROJECT_DIR$/ess-framework-service/pom.xml" />
+        <option value="$PROJECT_DIR$/../ess-example-all/pom.xml" />
       </list>
     </option>
   </component>

@@ -3,6 +3,7 @@ package com.ess.framework.boot.gloabl;
 import javax.security.auth.message.AuthException;
 import javax.servlet.http.HttpServletRequest;
 
+import com.ess.framework.api.response.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 import com.ess.framework.commons.exception.BusinessException;
-import com.ess.framework.commons.response.ResponseMap;
 
 /**
  * 全局异常统一处理类
@@ -33,9 +33,9 @@ public class GloablExceptionHandler {
 	@ResponseBody
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	@ExceptionHandler(value=NoHandlerFoundException.class)
-	public ResponseMap exception(HttpServletRequest request,NoHandlerFoundException e) {
+	public ApiResponse<?> exception(HttpServletRequest request, NoHandlerFoundException e) {
 		logger.error("拦截系统异常-404:",e);
-		ResponseMap reponseMap=  ResponseMap.failMap();
+		ApiResponse reponseMap=  ApiResponse.failResp();
 		reponseMap.setCode(404);
 		reponseMap.setMessage("请求的路径不存在，请确认是否路径是否正确.");
 		return reponseMap;
@@ -48,9 +48,9 @@ public class GloablExceptionHandler {
 	@ResponseBody
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	@ExceptionHandler(value=Exception.class)
-	public ResponseMap exception(HttpServletRequest request,Exception e) {
+	public ApiResponse<?> exception(HttpServletRequest request,Exception e) {
 		logger.error("拦截系统异常-500:",e);
-		ResponseMap reponseMap=  ResponseMap.failMap();
+		ApiResponse reponseMap=  ApiResponse.failResp();
 		return reponseMap;
 	}
 	
@@ -60,9 +60,9 @@ public class GloablExceptionHandler {
 	 */
 	@ResponseBody
 	@ExceptionHandler(value=BusinessException.class)
-	public ResponseMap busiexception(BusinessException exception) {
+	public ApiResponse<?> busiexception(BusinessException exception) {
 		logger.error("拦截业务异常-业务异常:",exception);
-		return ResponseMap.failMap(exception);
+		return ApiResponse.failResp(exception.getCode(),exception.getMessage());
 	}
 	
 	

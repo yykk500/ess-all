@@ -25,9 +25,9 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: com.ess:ess-framework-cloud:0.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.ess:ess-framework-boot:0.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.ess:ess-framework-commons:0.0.1-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="ess-framework-cloud" />
+    <orderEntry type="module" module-name="ess-framework-boot" />
+    <orderEntry type="module" module-name="ess-framework-commons" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:2.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-json:2.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.2" level="project" />
@@ -172,11 +172,11 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.10.2" level="project" />
     <orderEntry type="module" module-name="ess-example-api" />
-    <orderEntry type="library" name="Maven: com.ess:ess-framework-api:0.0.1-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="ess-framework-api" />
     <orderEntry type="library" name="Maven: io.swagger:swagger-annotations:1.5.20" level="project" />
     <orderEntry type="module" module-name="ess-example-service" />
-    <orderEntry type="library" name="Maven: com.ess:ess-framework-service:0.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.ess:ess-framework-mapper:0.0.1-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="ess-framework-service" />
+    <orderEntry type="module" module-name="ess-framework-mapper" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.9-rc" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.2.4.RELEASE" level="project" />

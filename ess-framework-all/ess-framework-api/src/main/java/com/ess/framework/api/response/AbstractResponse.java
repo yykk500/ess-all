@@ -15,6 +15,8 @@ public class AbstractResponse {
     @ApiModelProperty(value = "响应消息",notes ="响应消息：操作成功" )
     private String message;// 响应消息
 
+    @ApiModelProperty(value = "SID请求唯一标识",notes ="请求唯一标识" )
+    private String sid;// 响应码：200等于成功，其他等于失败
 
     public static final int CODE_SUCCESS = 200; // 响应状态是否成功 code=时等于true，非200时等于false
 
@@ -52,5 +54,13 @@ public class AbstractResponse {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getSid() {
+        return sid;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
     }
 }
