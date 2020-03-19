@@ -7,10 +7,12 @@ import com.ess.framework.api.response.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 import com.ess.framework.commons.exception.BusinessException;
@@ -22,6 +24,12 @@ import com.ess.framework.commons.exception.BusinessException;
  */
 @ControllerAdvice
 public class GloablExceptionHandler {
+
+	private final static String SID="sid";
+
+	private final static int NOT_FOUNT_CODE= 404;
+
+	private final static String NOT_FOUNT_MSG= "请求的路径不存在，请确认是否路径是否正确.";
 
 	/** Logger used by this class. Available to subclasses. */
 	protected final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -35,10 +43,7 @@ public class GloablExceptionHandler {
 	@ExceptionHandler(value=NoHandlerFoundException.class)
 	public ApiResponse<?> exception(HttpServletRequest request, NoHandlerFoundException e) {
 		logger.error("拦截系统异常-404:",e);
-		ApiResponse reponseMap=  ApiResponse.failResp();
-		reponseMap.setCode(404);
-		reponseMap.setMessage("请求的路径不存在，请确认是否路径是否正确.");
-		return reponseMap;
+		return returnApiResponse(request,NOT_FOUNT_CODE,NOT_FOUNT_MSG);
 	}
 	
 	/**
@@ -50,8 +55,7 @@ public class GloablExceptionHandler {
 	@ExceptionHandler(value=Exception.class)
 	public ApiResponse<?> exception(HttpServletRequest request,Exception e) {
 		logger.error("拦截系统异常-500:",e);
-		ApiResponse reponseMap=  ApiResponse.failResp();
-		return reponseMap;
+		return returnApiResponse(request,ApiResponse.CODE_DEFALUT_FAIL,ApiResponse.MESSAGE_FAIL);
 	}
 	
 	/**
@@ -60,22 +64,41 @@ public class GloablExceptionHandler {
 	 */
 	@ResponseBody
 	@ExceptionHandler(value=BusinessException.class)
-	public ApiResponse<?> busiexception(BusinessException exception) {
+	public ApiResponse<?> busiexception(HttpServletRequest request,BusinessException exception) {
 		logger.error("拦截业务异常-业务异常:",exception);
-		return ApiResponse.failResp(exception.getCode(),exception.getMessage());
+		return returnApiResponse(request,exception.getCode(),exception.getMessage());
 	}
-	
-	
 
 	/**
-	 * 异常拦截处理
+	 * 统一返回响应，处理SID字段
+	 * @param request
+	 * @param code
+	 * @param message
 	 * @return
 	 */
-//	@ResponseBody
-//	@ExceptionHandler(value= AuthException.class)
-//	public ResponseData  busiexception(AuthException exception) {
-//		Map<String,Object> resultMap = ResultMapHelper.failMap(exception);
-//		resultMap.put("isLogin", false);
-//		return resultMap;
-//	}
+	public ApiResponse<?> returnApiResponse(HttpServletRequest request,Integer code , String message){
+		ApiResponse apiResponse =  ApiResponse.failResp(code,message);
+		String sid = getSID(request);
+		if(StringUtils.hasText(sid)){
+			apiResponse.setSid(sid);
+		}
+		return apiResponse;
+	}
+
+	/**
+	 * 获取SID请求参数
+	 * @param request
+	 * @return
+	 */
+	private static String getSID(HttpServletRequest request){
+		String sid = request.getParameter(SID);
+		if(StringUtils.hasText(sid)){
+			return sid;
+		}
+		sid = request.getHeader(SID);
+		if(StringUtils.hasText(sid)){
+			return sid;
+		}
+		return sid;
+	}
 }

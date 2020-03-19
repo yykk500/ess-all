@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.ess.framework.boot.config.FrameworkBootConfig;
 import com.ess.framework.boot.interceptor.SIDInterceptor;
+import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -47,19 +48,19 @@ public class BootWebConfigurer extends WebMvcConfigurationSupport {
 //        handlers.add(new SIDReturnValueHandler());
 //    }
 
-    @Override
-	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
-		//  1.定义一个convert转换消息对象
-        FastJsonHttpMessageConverter fastConverter= new FastJsonHttpMessageConverter();
-        //2.添加fastjson的配置信息，比如：是否要格式化返回json数据
-        FastJsonConfig fastJsonConfig=new FastJsonConfig();
-        fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat );
-        fastJsonConfig.setCharset(Charset.forName("UTF-8"));
-        fastJsonConfig.setDateFormat("yyyy-MM-dd HH:mm:ss");
-        fastConverter.setFastJsonConfig(fastJsonConfig);
-        fastConverter.setSupportedMediaTypes(getSupportedMediaTypes());
-        converters.add(fastConverter);
-	}
+//    @Override
+//	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+//		//  1.定义一个convert转换消息对象
+//        FastJsonHttpMessageConverter fastConverter= new FastJsonHttpMessageConverter();
+//        //2.添加fastjson的配置信息，比如：是否要格式化返回json数据
+//        FastJsonConfig fastJsonConfig=new FastJsonConfig();
+//        fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat );
+//        fastJsonConfig.setCharset(Charset.forName("UTF-8"));
+//        fastJsonConfig.setDateFormat("yyyy-MM-dd HH:mm:ss");
+//        fastConverter.setFastJsonConfig(fastJsonConfig);
+//        fastConverter.setSupportedMediaTypes(getSupportedMediaTypes());
+//        converters.add(fastConverter);
+//	}
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -69,26 +70,23 @@ public class BootWebConfigurer extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
 	}
 
-
+    @Bean
+    public HttpMessageConverters fastJsonHttpMessageConverters() {
+        //  1.定义一个convert转换消息对象
+        FastJsonHttpMessageConverter fastConverter= new FastJsonHttpMessageConverter();
+        //2.添加fastjson的配置信息，比如：是否要格式化返回json数据
+        FastJsonConfig fastJsonConfig=new FastJsonConfig();
+        fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat );
+        fastJsonConfig.setCharset(Charset.forName("UTF-8"));
+        fastJsonConfig.setDateFormat("yyyy-MM-dd HH:mm:ss");
+        fastConverter.setFastJsonConfig(fastJsonConfig);
+        fastConverter.setSupportedMediaTypes(getSupportedMediaTypes());
+        return new HttpMessageConverters(fastConverter);
+    }
 
 
 	private static  List<MediaType> getSupportedMediaTypes(){
 		List<MediaType> supportedMediaTypes = new ArrayList<>();
-//        supportedMediaTypes.add(MediaType.APPLICATION_ATOM_XML);
-//        supportedMediaTypes.add(MediaType.APPLICATION_FORM_URLENCODED);
-//        supportedMediaTypes.add(MediaType.APPLICATION_OCTET_STREAM);
-//        supportedMediaTypes.add(MediaType.APPLICATION_PDF);
-//        supportedMediaTypes.add(MediaType.APPLICATION_RSS_XML);
-//        supportedMediaTypes.add(MediaType.APPLICATION_XHTML_XML);
-//        supportedMediaTypes.add(MediaType.APPLICATION_XML);
-//        supportedMediaTypes.add(MediaType.IMAGE_GIF);
-//        supportedMediaTypes.add(MediaType.IMAGE_JPEG);
-//        supportedMediaTypes.add(MediaType.IMAGE_PNG);
-//        supportedMediaTypes.add(MediaType.TEXT_EVENT_STREAM);
-//        supportedMediaTypes.add(MediaType.TEXT_HTML);
-//        supportedMediaTypes.add(MediaType.TEXT_MARKDOWN);
-//        supportedMediaTypes.add(MediaType.TEXT_PLAIN);
-//        supportedMediaTypes.add(MediaType.TEXT_XML);
         supportedMediaTypes.add(MediaType.APPLICATION_JSON);
         return supportedMediaTypes;
 	}

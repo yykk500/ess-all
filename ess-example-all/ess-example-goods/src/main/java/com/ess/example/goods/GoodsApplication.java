@@ -2,6 +2,7 @@ package com.ess.example.goods;
 
 
 import com.ess.framework.boot.config.FrameworkBootConfig;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -16,6 +17,8 @@ import com.ess.framework.boot.gloabl.BootWebConfigurer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import tk.mybatis.spring.annotation.MapperScan;
 
+import java.util.HashMap;
+
 @EnableDiscoveryClient
 @SpringBootApplication
 @MapperScan(basePackages = "com.ess.example.mapper")
@@ -25,6 +28,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 public class GoodsApplication extends FrameworkBootConfig {
 
 	public static void main(String[] args) {
+		ObjectMapper s;
 		SpringApplication.run(GoodsApplication.class, args);
 	}
 	 

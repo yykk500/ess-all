@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f74f9d76-bcc0-459b-862e-06115d50442b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/aop/JobScheduleAop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/schedule/WorkJobSchedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/interceptor/SIDInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ess-example-all/ess-example-api/src/main/java/com/ess/example/dto/goods/GoodsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-api/src/main/java/com/ess/example/dto/goods/GoodsDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/GoodsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/GoodsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/web/ReadConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/web/ReadConfigController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/request/ApiRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/request/ApiRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/response/AbstractResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-api/src/main/java/com/ess/framework/api/response/AbstractResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ess-framework-boot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/config/FrameworkBootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/config/FrameworkBootConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/BootWebConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/BootWebConfigurer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/GloablExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/GloablExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-commons/src/main/java/com/ess/framework/commons/exception/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-commons/src/main/java/com/ess/framework/commons/exception/BusinessException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-commons/src/main/java/com/ess/framework/commons/response/ResponseMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-commons/src/main/java/com/ess/framework/commons/response/ResponseMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-gateway/pom.xml.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ess-framework-cloud/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-cloud/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +144,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
   <component name="StructureViewFactory">
     <option name="AUTOSCROLL_MODE" value="false" />
   </component>
@@ -174,7 +170,8 @@
       <workItem from="1583927253986" duration="894000" />
       <workItem from="1584192358067" duration="2483000" />
       <workItem from="1584275685795" duration="22490000" />
-      <workItem from="1584537131187" duration="15238000" />
+      <workItem from="1584537131187" duration="15583000" />
+      <workItem from="1584620479261" duration="3696000" />
     </task>
     <task id="LOCAL-00001" summary="更新POM文件">
       <created>1584192431705</created>
@@ -214,38 +211,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="212" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584537182012" />
-    <state width="1877" height="338" key="GridCell.Tab.0.bottom" timestamp="1584552750370">
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom" timestamp="1584623583779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584552750370" />
-    <state width="1877" height="338" key="GridCell.Tab.0.center" timestamp="1584552750370">
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583779" />
+    <state width="1877" height="338" key="GridCell.Tab.0.center" timestamp="1584623583778">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584552750370" />
-    <state width="1877" height="338" key="GridCell.Tab.0.left" timestamp="1584552750370">
+    <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583778" />
+    <state width="1877" height="338" key="GridCell.Tab.0.left" timestamp="1584623583778">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584552750370" />
-    <state width="1877" height="338" key="GridCell.Tab.0.right" timestamp="1584552750370">
+    <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583778" />
+    <state width="1877" height="338" key="GridCell.Tab.0.right" timestamp="1584623583778">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584552750370" />
-    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1584552750370">
+    <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583778" />
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1584623583597">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584552750370" />
-    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1584552750370">
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583597" />
+    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1584623583596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584552750370" />
-    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1584552750370">
+    <state width="1877" height="338" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583596" />
+    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1584623583596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584552750370" />
-    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1584552750370">
+    <state width="1877" height="338" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583596" />
+    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1584623583597">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584552750370" />
+    <state width="1877" height="338" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583597" />
     <state x="600" y="223" key="NewModule_or_Project.wizard" timestamp="1584537183806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -270,10 +267,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584362139138" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584551120896">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584622062672">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584551120896" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584622062672" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -284,14 +281,9 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/SIDReturnValueHandler.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/SIDReturnValueHandler.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="24" />
+          <url>jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.62/fastjson-1.2.62-sources.jar!/com/alibaba/fastjson/support/spring/FastJsonHttpMessageConverter.java</url>
+          <line>243</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

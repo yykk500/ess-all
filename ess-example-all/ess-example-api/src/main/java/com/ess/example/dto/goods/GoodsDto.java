@@ -1,5 +1,6 @@
 package com.ess.example.dto.goods;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -38,6 +39,7 @@ public class GoodsDto {
     /**
      * 商品价格
      */
+    @JSONField(name = "price_xx",deserialize = true)
     private BigDecimal price;
 
     /**

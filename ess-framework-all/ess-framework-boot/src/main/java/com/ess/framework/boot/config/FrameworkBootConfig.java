@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 import org.springframework.web.servlet.mvc.method.annotation.DeferredResultMethodReturnValueHandler;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
+import org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -23,20 +24,19 @@ public class FrameworkBootConfig extends BootWebConfigurer {
     @Autowired
     private RequestMappingHandlerAdapter requestMappingHandlerAdapter;
 
-
-
-
-    @Bean
-    public HandlerMethodReturnValueHandler sidReturnValueHandler() {
-        return new SIDReturnValueHandler();
-    }
     @PostConstruct
     public void init() {
         System.out.println("添加。。。addReturnValueHandlers");
         final List<HandlerMethodReturnValueHandler> originalHandlers = new ArrayList<>(requestMappingHandlerAdapter.getReturnValueHandlers());
         final int deferredPos = obtainValueHandlerPosition(originalHandlers, DeferredResultMethodReturnValueHandler.class);
-// Add our handler directly after the deferred handler.
-        originalHandlers.add(deferredPos + 1, sidReturnValueHandler());
+        SIDReturnValueHandler decorator = null;
+        for(HandlerMethodReturnValueHandler handler : originalHandlers){
+            if (handler instanceof RequestResponseBodyMethodProcessor) {
+                decorator = new SIDReturnValueHandler((RequestResponseBodyMethodProcessor) handler);
+                break;
+            }
+        }
+        originalHandlers.add(deferredPos + 1, decorator);
         requestMappingHandlerAdapter.setReturnValueHandlers(originalHandlers);
     }
 
