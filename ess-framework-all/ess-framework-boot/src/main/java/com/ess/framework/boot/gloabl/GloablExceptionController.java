@@ -23,7 +23,7 @@ import com.ess.framework.commons.exception.BusinessException;
  *
  */
 @ControllerAdvice
-public class GloablExceptionHandler {
+public class GloablExceptionController {
 
 	private final static String SID="sid";
 

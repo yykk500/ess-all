@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f74f9d76-bcc0-459b-862e-06115d50442b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ess-example-all/ess-example-api/src/main/java/com/ess/example/dto/goods/GoodsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-api/src/main/java/com/ess/example/dto/goods/GoodsDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/GoodsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/GoodsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ess-framework-boot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/config/FrameworkBootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/config/FrameworkBootConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/BootWebConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/BootWebConfigurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/GloablExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/GloablExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-cloud/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-cloud/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/GloablExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/GloablExceptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/SIDReturnValueHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/interceptor/SIDInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/interceptor/SIDInterceptor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +35,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -62,6 +63,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -79,6 +81,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ess.framework.boot.handler" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\devwork\ess-example-all\ess-example-api\src\main\java\com\ess\example\dto" />
     </key>
@@ -171,7 +176,8 @@
       <workItem from="1584192358067" duration="2483000" />
       <workItem from="1584275685795" duration="22490000" />
       <workItem from="1584537131187" duration="15583000" />
-      <workItem from="1584620479261" duration="3696000" />
+      <workItem from="1584620479261" duration="4299000" />
+      <workItem from="1584752007698" duration="21399000" />
     </task>
     <task id="LOCAL-00001" summary="更新POM文件">
       <created>1584192431705</created>
@@ -195,54 +201,58 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="663" y="183" key="#GoodsApplication/0.0.1920.1040@0.0.1920.1040" timestamp="1584283811974" />
-    <state x="765" y="212" width="627" height="584" key="#com.intellij.ide.util.MemberChooser" timestamp="1584546128421">
+    <state x="765" y="212" width="627" height="584" key="#com.intellij.ide.util.MemberChooser" timestamp="1584879190137">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="212" width="627" height="584" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584546128421" />
+    <state x="765" y="212" width="627" height="584" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584879190137" />
+    <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584840728406">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584840728406" />
     <state x="557" y="117" key="CommitChangelistDialog2" timestamp="1584192429325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="557" y="117" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584192429325" />
-    <state width="438" height="463" key="DebuggerActiveHint" timestamp="1584542754138">
+    <state width="522" height="463" key="DebuggerActiveHint" timestamp="1584876606005">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="438" height="463" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1584542754138" />
+    <state width="522" height="463" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1584876606005" />
     <state x="740" y="212" key="FileChooserDialogImpl" timestamp="1584537182012">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="212" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584537182012" />
-    <state width="1877" height="338" key="GridCell.Tab.0.bottom" timestamp="1584623583779">
+    <state width="938" height="274" key="GridCell.Tab.0.bottom" timestamp="1584879999316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583779" />
-    <state width="1877" height="338" key="GridCell.Tab.0.center" timestamp="1584623583778">
+    <state width="938" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584879999316" />
+    <state width="938" height="274" key="GridCell.Tab.0.center" timestamp="1584879999316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583778" />
-    <state width="1877" height="338" key="GridCell.Tab.0.left" timestamp="1584623583778">
+    <state width="938" height="274" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584879999316" />
+    <state width="938" height="274" key="GridCell.Tab.0.left" timestamp="1584879999316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583778" />
-    <state width="1877" height="338" key="GridCell.Tab.0.right" timestamp="1584623583778">
+    <state width="938" height="274" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584879999316" />
+    <state width="938" height="274" key="GridCell.Tab.0.right" timestamp="1584879999316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583778" />
-    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1584623583597">
+    <state width="938" height="274" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584879999316" />
+    <state width="1209" height="339" key="GridCell.Tab.1.bottom" timestamp="1584879999299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583597" />
-    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1584623583596">
+    <state width="1209" height="339" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584879999299" />
+    <state width="1209" height="339" key="GridCell.Tab.1.center" timestamp="1584879999299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583596" />
-    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1584623583596">
+    <state width="1209" height="339" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584879999299" />
+    <state width="1209" height="339" key="GridCell.Tab.1.left" timestamp="1584879999299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583596" />
-    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1584623583597">
+    <state width="1209" height="339" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584879999299" />
+    <state width="1209" height="339" key="GridCell.Tab.1.right" timestamp="1584879999299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="338" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584623583597" />
+    <state width="1209" height="339" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584879999299" />
     <state x="600" y="223" key="NewModule_or_Project.wizard" timestamp="1584537183806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -267,23 +277,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584362139138" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584622062672">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584876287272">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584622062672" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584876287272" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/interceptor/SIDInterceptor.java</url>
-          <line>2</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.62/fastjson-1.2.62-sources.jar!/com/alibaba/fastjson/support/spring/FastJsonHttpMessageConverter.java</url>
-          <line>243</line>
-          <option name="timeStamp" value="25" />
+          <url>file://$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/web/GoodsController.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -294,6 +299,11 @@
         <watch expression="handlerMethod" />
         <watch expression="handlerMethod.method" />
         <watch expression="modelAndView" language="JAVA" />
+        <watch expression="supports(clazz) &amp;&amp; canWrite(mediaType)" language="JAVA" />
+        <watch expression=" supports(clazz) " />
+        <watch expression="canWrite(mediaType)" />
+        <watch expression="this.messageConverters" />
+        <watch expression="converter" />
       </configuration>
     </watches-manager>
   </component>
