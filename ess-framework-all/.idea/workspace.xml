@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f74f9d76-bcc0-459b-862e-06115d50442b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/GoodsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ess-example-all/ess-example-goods/src/main/java/com/ess/example/goods/GoodsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-boot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/config/FrameworkBootConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/config/FrameworkBootConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/BootWebConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/BootWebConfigurer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/GloablExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/GloablExceptionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/gloabl/SIDReturnValueHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/interceptor/SIDInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/ess-framework-boot/src/main/java/com/ess/framework/boot/interceptor/SIDInterceptor.java" afterDir="false" />
-    </list>
+    <list default="true" id="f74f9d76-bcc0-459b-862e-06115d50442b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
