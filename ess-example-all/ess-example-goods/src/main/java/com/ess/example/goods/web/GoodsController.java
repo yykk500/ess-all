@@ -14,6 +14,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ess.example.api.GoodsFeignClient;
@@ -37,9 +38,15 @@ public class GoodsController extends AbstractController implements GoodsFeignCli
 
 	@Override
 	@ApiOperation(value = "查询商品接口")
-	public ApiResponse<GoodsDto> getGoods(@ApiParam GetGoodsReq getGoodsReq) {
+	public ApiResponse<GoodsDto> getGoods(@ApiParam @RequestBody GetGoodsReq getGoodsReq) {
 		// 根据Id查询商品信息
 		Goods goods = goodsService.selectByPrimaryKey(getGoodsReq.getGoodsId());
+		try {
+			// 休眠5秒
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		// PO与Dto数据对象转换
 		GoodsDto goodsDto = new GoodsDto();
 		BeanUtils.copyProperties(goods, goodsDto);

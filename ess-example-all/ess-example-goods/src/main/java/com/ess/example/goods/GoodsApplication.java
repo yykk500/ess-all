@@ -8,6 +8,7 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -26,6 +27,7 @@ import java.util.HashMap;
 @MapperScan(basePackages = "com.ess.example.mapper")
 @ComponentScan(basePackages = {"com.ess.example.goods.web","com.ess.**.service","com.ess.example.goods.schedule","com.ess.example.goods.aop"})
 @EnableScheduling
+@ImportAutoConfiguration(exclude = {JacksonAutoConfiguration.class})
 public class GoodsApplication extends FrameworkBootConfig {
 
 	public static void main(String[] args) {

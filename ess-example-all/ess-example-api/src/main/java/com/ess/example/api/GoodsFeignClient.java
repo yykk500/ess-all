@@ -11,6 +11,8 @@ import com.ess.example.dto.goods.GoodsDetailDto;
 import com.ess.example.dto.goods.GoodsDto;
 import com.ess.framework.api.ApiFeignClient;
 import com.ess.framework.api.response.ApiResponse;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(name = "example-goods",fallback = GoodsFeignClientFallback.class)
 public interface GoodsFeignClient extends ApiFeignClient {
@@ -19,8 +21,8 @@ public interface GoodsFeignClient extends ApiFeignClient {
 	 * 查询商品信息
 	 * @return
 	 */
-	@GetMapping(value = "/getGoods",produces = APPLICATION_JSON )
-	public ApiResponse<GoodsDto> getGoods(GetGoodsReq goodsReq);
+	@PostMapping(value = "/getGoods",produces = APPLICATION_JSON )
+	public ApiResponse<GoodsDto> getGoods(@RequestBody GetGoodsReq goodsReq);
 
 	/**
 	 * 查询商品信息

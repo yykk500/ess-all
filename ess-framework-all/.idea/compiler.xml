@@ -2,22 +2,23 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ess-example-goods" />
         <module name="ess-framework-boot" />
-        <module name="ess-framework-api" />
         <module name="ess-example-api" />
         <module name="ess-framework-mapper" />
         <module name="ess-example-mapper" />
         <module name="ess-example-service" />
+        <module name="ess-framework-commons" />
+        <module name="ess-framework-api" />
         <module name="ess-framework-service" />
         <module name="ess-example-order" />
-        <module name="ess-framework-cloud" />
         <module name="ess-framework-gateway" />
-        <module name="ess-framework-commons" />
+        <module name="ess-framework-cloud" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -1,5 +1,6 @@
 package com.ess.example.order;
 
+import com.ess.framework.boot.config.FrameworkBootConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -12,7 +13,7 @@ import com.ess.framework.boot.gloabl.BootWebConfigurer;
 @SpringBootApplication
 @EnableFeignClients(basePackages = "com.ess.example.api")
 @ComponentScan(basePackages = {"com.ess.example.order.web","com.ess.example.api.fallback"})
-public class OrderApplication extends BootWebConfigurer{
+public class OrderApplication extends FrameworkBootConfig {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OrderApplication.class, args);

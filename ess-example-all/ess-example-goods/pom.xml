@@ -24,29 +24,6 @@
         <dependency>
             <groupId>com.ess</groupId>
             <artifactId>ess-framework-cloud</artifactId>
-            <exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-devtools</artifactId>
-				</exclusion>
-                <exclusion>
-                    <groupId>io.zipkin.reporter2</groupId>
-                    <artifactId>
-                        zipkin-sender-activemq-client
-                    </artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>io.zipkin.reporter2</groupId>
-                    <artifactId>zipkin-sender-kafka</artifactId>
-                </exclusion>
-
-                <exclusion>
-                    <groupId>io.zipkin.reporter2</groupId>
-                    <artifactId>
-                        zipkin-sender-activemq-client
-                    </artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>

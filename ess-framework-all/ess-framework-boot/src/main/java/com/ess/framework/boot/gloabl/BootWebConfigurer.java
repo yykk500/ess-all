@@ -56,7 +56,7 @@ public abstract class BootWebConfigurer implements WebMvcConfigurer {
     private static final List<String> STATIC_RESOURCE = Arrays.asList("/","/**/*.html","/**/*.js","/**/*.ico","/**/*.jpg","/webjars/**","/cors","/swagger**");
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-       registry.addInterceptor(new SIDInterceptor()).addPathPatterns("/**").excludePathPatterns(STATIC_RESOURCE);
+//       registry.addInterceptor(new SIDInterceptor()).addPathPatterns("/**").excludePathPatterns(STATIC_RESOURCE);
        registry.addInterceptor(new ParamReturnInterceptor()).addPathPatterns("/**").excludePathPatterns(STATIC_RESOURCE);
     }
 
@@ -108,7 +108,7 @@ public abstract class BootWebConfigurer implements WebMvcConfigurer {
     @Override
     public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
         // 移除Jackson消息处理器
-        removeJacksonMessageConverters(converters);
+//        removeJacksonMessageConverters(converters);
 
         logger.info("添加Fastjson消息转换器。");
         //  1.定义一个convert转换消息对象
