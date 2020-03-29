@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.StringUtils;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,6 +32,9 @@ public class GloablExceptionController {
 
 	private final static String NOT_FOUNT_MSG= "请求的路径不存在，请确认是否路径是否正确.";
 
+
+	private final static String NOT_SUPPORTED_METHOD_MSG= "不支持请求方法:";
+
 	/** Logger used by this class. Available to subclasses. */
 	protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -52,7 +56,21 @@ public class GloablExceptionController {
 	 */
 	@ResponseBody
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-	@ExceptionHandler(value=Exception.class)
+	@ExceptionHandler(value=HttpRequestMethodNotSupportedException.class)
+	public ApiResponse<?> notSupperMethod(HttpServletRequest request,Exception e) {
+		String method = request.getMethod();
+		logger.error("拦截系统异常-不支持请求方法:{}",method);
+		return returnApiResponse(request,ApiResponse.CODE_DEFALUT_FAIL,NOT_SUPPORTED_METHOD_MSG+method);
+	}
+
+
+	/**
+	 * 系统异常拦截处理
+	 * @return
+	 */
+	@ResponseBody
+	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+	@ExceptionHandler(value= Exception.class)
 	public ApiResponse<?> exception(HttpServletRequest request,Exception e) {
 		logger.error("拦截系统异常-500:",e);
 		return returnApiResponse(request,ApiResponse.CODE_DEFALUT_FAIL,ApiResponse.MESSAGE_FAIL);

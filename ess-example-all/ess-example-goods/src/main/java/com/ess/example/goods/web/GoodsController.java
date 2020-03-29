@@ -41,12 +41,6 @@ public class GoodsController extends AbstractController implements GoodsFeignCli
 	public ApiResponse<GoodsDto> getGoods(@ApiParam @RequestBody GetGoodsReq getGoodsReq) {
 		// 根据Id查询商品信息
 		Goods goods = goodsService.selectByPrimaryKey(getGoodsReq.getGoodsId());
-		try {
-			// 休眠5秒
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 		// PO与Dto数据对象转换
 		GoodsDto goodsDto = new GoodsDto();
 		BeanUtils.copyProperties(goods, goodsDto);
@@ -86,6 +80,12 @@ public class GoodsController extends AbstractController implements GoodsFeignCli
 		// 设置分页数据：总记录数和分页数量
 		response.setPageInfo(pageInfo.getTotal(),pageInfo.getPages());
 		return response;
+	}
+
+	@Override
+	public ApiResponse<String> cesu(GoodsListReq goodsListReq) {
+		logger.info("测速接口。。。");
+		return ApiResponse.successResp("测速接口");
 	}
 
 }

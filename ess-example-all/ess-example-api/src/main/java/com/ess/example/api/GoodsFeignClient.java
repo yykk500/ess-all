@@ -6,7 +6,6 @@ import com.ess.framework.api.response.ApiPageResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.ess.example.api.fallback.GoodsFeignClientFallback;
 import com.ess.example.dto.goods.GoodsDetailDto;
 import com.ess.example.dto.goods.GoodsDto;
 import com.ess.framework.api.ApiFeignClient;
@@ -14,7 +13,7 @@ import com.ess.framework.api.response.ApiResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "example-goods",fallback = GoodsFeignClientFallback.class)
+@FeignClient(name = "example-goods")
 public interface GoodsFeignClient extends ApiFeignClient {
 
 	/**
@@ -37,4 +36,12 @@ public interface GoodsFeignClient extends ApiFeignClient {
 	 */
 	@GetMapping(value = "/goodsList",produces = APPLICATION_JSON )
 	public ApiPageResponse<GoodsDto> goodsList(GoodsListReq goodsListReq);
+
+
+	/**
+	 * 测速接口
+	 * @return
+	 */
+	@GetMapping(value = "/cesu",produces = APPLICATION_JSON )
+	public ApiResponse<String> cesu(GoodsListReq goodsListReq);
 }

@@ -23,10 +23,10 @@
 			</exclusions>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>com.alibaba.csp</groupId>
 			<artifactId>sentinel-spring-cloud-gateway-adapter</artifactId>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>com.alibaba.csp</groupId>

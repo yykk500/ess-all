@@ -1,7 +1,7 @@
 package com.ess.framework.gateway.handler;
 
-import java.util.Map;
-
+import com.alibaba.csp.sentinel.slots.block.BlockException;
+import com.ess.framework.api.response.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.web.ErrorProperties;
@@ -11,14 +11,9 @@ import org.springframework.boot.web.reactive.error.ErrorAttributes;
 import org.springframework.cloud.gateway.support.NotFoundException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.reactive.function.server.RequestPredicates;
-import org.springframework.web.reactive.function.server.RouterFunction;
-import org.springframework.web.reactive.function.server.RouterFunctions;
-import org.springframework.web.reactive.function.server.ServerRequest;
-import org.springframework.web.reactive.function.server.ServerResponse;
+import org.springframework.web.reactive.function.server.*;
 
-import com.alibaba.csp.sentinel.slots.block.BlockException;
-import com.ess.framework.commons.response.ResponseMap;
+import java.util.Map;
 
 /**
  * 网关异常统一处理。
@@ -63,12 +58,12 @@ public class GatewayErrorHandler extends DefaultErrorWebExceptionHandler {
 			}
 			  // This exception handler only handles rejection by Sentinel.
 	        if (!BlockException.isBlockException(ex)) {
-	        	return ResponseMap.failMap(code,msg);
+	        	return ApiResponse.failResp(code,msg).toMap();
 	        }
 	        // 处理Sentinel异常
 	        code = HttpStatus.TOO_MANY_REQUESTS.value();
 	        msg = DEFAULT_BLOCK_MSG_PREFIX + ex.getClass().getSimpleName();
-			return ResponseMap.failMap(code,msg);
+			return ApiResponse.failResp(code,msg).toMap();
 		}finally {
 		}
 	}

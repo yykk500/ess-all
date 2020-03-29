@@ -3,6 +3,9 @@ package com.ess.framework.api.response;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 返回消息的实体类
  * 
@@ -104,7 +107,17 @@ public class ApiResponse<T> extends AbstractResponse {
 		return data;
 	}
 
-	public void setData(T data) {
+	public ApiResponse<T> setData(T data) {
 		this.data = data;
+		return this;
+	}
+
+	public Map<String,Object> toMap(){
+		Map<String,Object> responseMap = new HashMap<>();
+		responseMap.put("status",this.getStatus());
+		responseMap.put("message",this.getMessage());
+		responseMap.put("code",this.getCode());
+		responseMap.put("data",this.getData());
+		return responseMap;
 	}
 }
